@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainTableViewController.h
 //  ProjectRoss
 //
 //  Created by JoLi on 2015-11-14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainTableViewController : UITableViewController
 
 @end
-

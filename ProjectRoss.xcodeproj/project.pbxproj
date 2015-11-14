@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D61BF73BFD00B2E571 /* MainTableViewController.m */; };
+		E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D91BF7433C00B2E571 /* DetailMapViewController.m */; };
 		E0C582681BF7318C0040DBC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C582671BF7318C0040DBC9 /* main.m */; };
 		E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */; };
-		E0C5826E1BF7318C0040DBC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5826D1BF7318C0040DBC9 /* ViewController.m */; };
 		E0C582711BF7318C0040DBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C5826F1BF7318C0040DBC9 /* Main.storyboard */; };
 		E0C582731BF7318C0040DBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C582721BF7318C0040DBC9 /* Assets.xcassets */; };
 		E0C582761BF7318C0040DBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */; };
@@ -35,12 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E09690D51BF73BFD00B2E571 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		E09690D61BF73BFD00B2E571 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		E09690D81BF7433C00B2E571 /* DetailMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapViewController.h; sourceTree = "<group>"; };
+		E09690D91BF7433C00B2E571 /* DetailMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapViewController.m; sourceTree = "<group>"; };
 		E0C582631BF7318C0040DBC9 /* ProjectRoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectRoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582671BF7318C0040DBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C582691BF7318C0040DBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E0C5826C1BF7318C0040DBC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E0C5826D1BF7318C0040DBC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E0C582701BF7318C0040DBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C582721BF7318C0040DBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C582751BF7318C0040DBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +106,10 @@
 			children = (
 				E0C582691BF7318C0040DBC9 /* AppDelegate.h */,
 				E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */,
-				E0C5826C1BF7318C0040DBC9 /* ViewController.h */,
-				E0C5826D1BF7318C0040DBC9 /* ViewController.m */,
+				E09690D51BF73BFD00B2E571 /* MainTableViewController.h */,
+				E09690D61BF73BFD00B2E571 /* MainTableViewController.m */,
+				E09690D81BF7433C00B2E571 /* DetailMapViewController.h */,
+				E09690D91BF7433C00B2E571 /* DetailMapViewController.m */,
 				E0C5826F1BF7318C0040DBC9 /* Main.storyboard */,
 				E0C582721BF7318C0040DBC9 /* Assets.xcassets */,
 				E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */,
@@ -270,7 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C5826E1BF7318C0040DBC9 /* ViewController.m in Sources */,
+				E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */,
+				E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */,
 				E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */,
 				E0C582681BF7318C0040DBC9 /* main.m in Sources */,
 			);
@@ -498,6 +504,7 @@
 				E0C582921BF7318C0040DBC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0C582931BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				E0C582951BF7318C0040DBC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0C582961BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +522,7 @@
 				E0C582981BF7318C0040DBC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
