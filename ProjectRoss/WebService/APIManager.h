@@ -12,4 +12,8 @@
 
 + (instancetype)sharedManager;
 
+- (void)getRidesForAreaWithPath:(NSString *)path
+            withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
+                andFailureBlock:(void (^)(NSError *error))failureBlock;
+
 @end

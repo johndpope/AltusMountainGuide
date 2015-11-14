@@ -417,6 +417,7 @@
 				E0C582701BF7318C0040DBC9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */ = {

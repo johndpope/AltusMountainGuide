@@ -21,7 +21,6 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         sessionConfiguration.HTTPShouldSetCookies = YES;
         
         _sharedManager = [[APIManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL] sessionConfiguration:sessionConfiguration];
-        _sharedManager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         _sharedManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _sharedManager.responseSerializer = [AFJSONResponseSerializer serializer];
     });
@@ -30,5 +29,18 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
 }
 
 
+
+- (void)getRidesForAreaWithPath:(NSString *)path withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock andFailureBlock:(void (^)(NSError *error))failureBlock {
+    
+    NSString *testPath = @"user/robm/rides";
+    NSString *encodedPath = [testPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    [self GET:encodedPath parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"Error...");
+    }];
+}
 
 @end
