@@ -11,7 +11,7 @@
 @implementation RideMapLocation
 
 - (instancetype)initWithRideId:(NSString *)rideId
-           locationCoordinates:(CLLocationCoordinate2D)locationCoordinates
+           locationCoordinates:(CLLocationCoordinate2D *)locationCoordinates
         numberOfLocationPoints:(NSUInteger)numberOflocationPoints
 {
     self = [super init];

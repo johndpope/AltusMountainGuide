@@ -9,6 +9,7 @@
 #import "MainTableViewController.h"
 #import "DetailMapViewController.h"
 #import "APIManager.h"
+#import "RideMapLocation.h"
 
 @interface MainTableViewController ()
 @property (nonatomic, strong) NSMutableArray *dataSourceArray;
@@ -29,17 +30,14 @@
     self.dataSourceArray = [NSMutableArray arrayWithArray:@[@"Squamish bike park", @"Whistler bike park"]];
     
     
-    [[APIManager sharedManager] getRidesForAreaWithPath:nil withCompletionBlock:^(NSArray *ridesData) {
-        
-        [[APIManager sharedManager] getRideMapLocationForRideId:ridesData[0] withCompletionBlock:^(NSArray *ridesData) {
-            
-        } andFailureBlock:^(NSError *error) {
-            
-        }];
+    
+    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
+       
         
     } andFailureBlock:^(NSError *error) {
-        
+        NSLog(@"%@", error);
     }];
+     
 }
 
 - (void)didReceiveMemoryWarning {
