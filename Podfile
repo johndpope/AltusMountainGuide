@@ -3,15 +3,4 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'ProjectRoss' do
-
-end
-
-target 'ProjectRossTests' do
-
-end
-
-target 'ProjectRossUITests' do
-
-end
-
+pod 'AFNetworking', '3.0.0-beta.2'

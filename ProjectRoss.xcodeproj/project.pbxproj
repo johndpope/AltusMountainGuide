@@ -16,6 +16,7 @@
 		E0C582761BF7318C0040DBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */; };
 		E0C582811BF7318C0040DBC9 /* ProjectRossTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C582801BF7318C0040DBC9 /* ProjectRossTests.m */; };
 		E0C5828C1BF7318C0040DBC9 /* ProjectRossUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5828B1BF7318C0040DBC9 /* ProjectRossUITests.m */; };
+		F114E7DD6D0C511357DA9CE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA84CADC7AD4CDA52AEC6E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61CF9F151C5287A5F56DAC51 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BAA84CADC7AD4CDA52AEC6E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1E6F1B811864535A17327A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E09690D51BF73BFD00B2E571 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		E09690D61BF73BFD00B2E571 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		E09690D81BF7433C00B2E571 /* DetailMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapViewController.h; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F114E7DD6D0C511357DA9CE4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B067F6C632E192450E27333B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAA84CADC7AD4CDA52AEC6E6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C167EFB734F12FA3F03C3D1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1E6F1B811864535A17327A1 /* Pods.debug.xcconfig */,
+				61CF9F151C5287A5F56DAC51 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E0C5825A1BF7318C0040DBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,8 @@
 				E0C5827F1BF7318C0040DBC9 /* ProjectRossTests */,
 				E0C5828A1BF7318C0040DBC9 /* ProjectRossUITests */,
 				E0C582641BF7318C0040DBC9 /* Products */,
+				C167EFB734F12FA3F03C3D1B /* Pods */,
+				B067F6C632E192450E27333B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0C582901BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRoss" */;
 			buildPhases = (
+				7D30409DFFB7DE269AF7FD1A /* Check Pods Manifest.lock */,
 				E0C5825F1BF7318C0040DBC9 /* Sources */,
 				E0C582601BF7318C0040DBC9 /* Frameworks */,
 				E0C582611BF7318C0040DBC9 /* Resources */,
+				C3ACFBEA9F9CCB4A765AA2A1 /* Embed Pods Frameworks */,
+				D743BB0A169C77AB06DDF28E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +296,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D30409DFFB7DE269AF7FD1A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3ACFBEA9F9CCB4A765AA2A1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D743BB0A169C77AB06DDF28E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0C5825F1BF7318C0040DBC9 /* Sources */ = {
@@ -415,6 +490,7 @@
 		};
 		E0C582911BF7318C0040DBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E6F1B811864535A17327A1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProjectRoss/Info.plist;
@@ -427,6 +503,7 @@
 		};
 		E0C582921BF7318C0040DBC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61CF9F151C5287A5F56DAC51 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProjectRoss/Info.plist;
