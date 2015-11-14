@@ -13,6 +13,9 @@
 
 @interface MainTableViewController ()
 @property (nonatomic, strong) NSMutableArray *dataSourceArray;
+
+@property (nonatomic, strong) RideMapLocation *testLocation;
+
 @end
 
 @implementation MainTableViewController
@@ -31,11 +34,16 @@
     
     
     [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
-        NSLog(@"%@", rideMapLocation);
+//        NSLog(@"%@", rideMapLocation);
+//        
+//        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints];
+//        NSLog(@"%@", polyline);
+//        
+//        
         
-        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints];
-        NSLog(@"%@", polyline);
+        self.testLocation = rideMapLocation;
         
+        NSLog(@"Download done...");
         
     } andFailureBlock:^(NSError *error) {
         NSLog(@"%@", error);
@@ -79,9 +87,9 @@
         DetailMapViewController *detailMapVC = (DetailMapViewController *)segue.destinationViewController;
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *mapDataItem = self.dataSourceArray[indexPath.row];
         
-        [detailMapVC setMapDataItem:mapDataItem];
+        detailMapVC.mapDataItem = self.dataSourceArray[indexPath.row];
+        detailMapVC.mapLocationItem = self.testLocation;
     }
 }
 

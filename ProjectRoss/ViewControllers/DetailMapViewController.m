@@ -7,6 +7,7 @@
 //
 
 #import "DetailMapViewController.h"
+#import "RideMapLocation.h"
 
 @interface DetailMapViewController ()
 
@@ -28,19 +29,29 @@
 
 
 
-- (void)setMapDataItem:(id)newMapDataItem {
-    if (_mapDataItem != newMapDataItem) {
-        _mapDataItem = newMapDataItem;
-        
-        [self configureView];
-    }
+
+- (void)configureView {
+    self.navigationItem.title = self.mapDataItem;
+    
+    self.mapView.delegate = self;
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:self.mapLocationItem.locationCoordinates count:self.mapLocationItem.numberOflocationPoints];
+    [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(30, 30, 30, 30) animated:YES];
+    [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
 }
 
 
-- (void)configureView {
-    if (self.mapDataItem) {
-        self.navigationItem.title = self.mapDataItem;
+#pragma mark - MKMapViewDelegate
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+    if (![overlay isKindOfClass:[MKPolyline class]]) {
+        return nil;
     }
+    
+    MKPolyline *polyline = (MKPolyline *) overlay;
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 3;
+    return renderer;
 }
 
 

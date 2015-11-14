@@ -11,6 +11,11 @@
 		E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D91BF7433C00B2E571 /* DetailMapViewController.m */; };
 		E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690DD1BF752CC00B2E571 /* APIManager.m */; };
 		E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690E21BF781B400B2E571 /* RideMapLocation.m */; };
+		E09690E51BF7D8C600B2E571 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E41BF7D8C600B2E571 /* MapKit.framework */; };
+		E09690E71BF7D8D300B2E571 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E61BF7D8D300B2E571 /* CoreMotion.framework */; };
+		E09690E91BF7D8DD00B2E571 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E81BF7D8DD00B2E571 /* CoreLocation.framework */; };
+		E09690EB1BF7D8E400B2E571 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690EA1BF7D8E400B2E571 /* UIKit.framework */; };
+		E09690EF1BF7D8FA00B2E571 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690EE1BF7D8FA00B2E571 /* Foundation.framework */; };
 		E0C582681BF7318C0040DBC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C582671BF7318C0040DBC9 /* main.m */; };
 		E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */; };
 		E0C582711BF7318C0040DBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C5826F1BF7318C0040DBC9 /* Main.storyboard */; };
@@ -50,6 +55,12 @@
 		E09690DD1BF752CC00B2E571 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		E09690E11BF781B400B2E571 /* RideMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideMapLocation.h; sourceTree = "<group>"; };
 		E09690E21BF781B400B2E571 /* RideMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideMapLocation.m; sourceTree = "<group>"; };
+		E09690E41BF7D8C600B2E571 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E09690E61BF7D8D300B2E571 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E09690E81BF7D8DD00B2E571 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E09690EA1BF7D8E400B2E571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E09690EC1BF7D8EE00B2E571 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E09690EE1BF7D8FA00B2E571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0C582631BF7318C0040DBC9 /* ProjectRoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectRoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582671BF7318C0040DBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C582691BF7318C0040DBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +82,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09690EF1BF7D8FA00B2E571 /* Foundation.framework in Frameworks */,
+				E09690EB1BF7D8E400B2E571 /* UIKit.framework in Frameworks */,
+				E09690E91BF7D8DD00B2E571 /* CoreLocation.framework in Frameworks */,
+				E09690E71BF7D8D300B2E571 /* CoreMotion.framework in Frameworks */,
+				E09690E51BF7D8C600B2E571 /* MapKit.framework in Frameworks */,
 				F114E7DD6D0C511357DA9CE4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +111,12 @@
 		B067F6C632E192450E27333B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E09690EE1BF7D8FA00B2E571 /* Foundation.framework */,
+				E09690EC1BF7D8EE00B2E571 /* AVFoundation.framework */,
+				E09690EA1BF7D8E400B2E571 /* UIKit.framework */,
+				E09690E81BF7D8DD00B2E571 /* CoreLocation.framework */,
+				E09690E61BF7D8D300B2E571 /* CoreMotion.framework */,
+				E09690E41BF7D8C600B2E571 /* MapKit.framework */,
 				BAA84CADC7AD4CDA52AEC6E6 /* libPods.a */,
 			);
 			name = Frameworks;

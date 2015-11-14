@@ -42,7 +42,11 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         NSArray *rideIds = [self mapJsonToRideIds:jsonRides];
         
         // for test now
-        NSString *testId = rideIds[0];
+        NSString *testId = rideIds[1];
+        
+        //NSString *testId = @"563f05f5dddf790300000005";
+        
+        
         
         NSString *locationsPath = [NSString stringWithFormat:@"/rides/%@/location", testId];
         NSString *locationsEncodedPath = [locationsPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -66,7 +70,6 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
 
 
 
-
 - (NSArray *)mapJsonToRideIds:(NSArray *)jsonRides {
     NSMutableArray *rideIds = [NSMutableArray array];
     
@@ -84,12 +87,13 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
     for (NSInteger i = 0; i < jsonLocations.count; i++) {
         NSDictionary *point = jsonLocations[i];
         NSArray *pointGeoDetail = point[@"geo"];
-        CGFloat longitude = [pointGeoDetail[0] doubleValue];
-        CGFloat latitude = [pointGeoDetail[1] doubleValue];
+        double latitude= [pointGeoDetail[0] doubleValue];
+        double longitude = [pointGeoDetail[1] doubleValue];
         
         CLLocationCoordinate2D pointCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
         
         finalCoordinate[i] = pointCoordinate;
+        NSLog(@"Point coordinate: lat %f | lon %f", latitude, longitude);
     }
     
     return [[RideMapLocation alloc] initWithRideId:rideId locationCoordinates:finalCoordinate numberOfLocationPoints:jsonLocations.count];

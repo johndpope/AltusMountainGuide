@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface DetailMapViewController : UIViewController
-@property (nonatomic, strong) id mapDataItem;
+@class RideMapLocation;
+
+@interface DetailMapViewController : UIViewController <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (nonatomic, strong) NSString *mapDataItem;
+@property (nonatomic, strong) RideMapLocation *mapLocationItem;
 
 @end
