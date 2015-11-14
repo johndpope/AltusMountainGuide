@@ -10,6 +10,7 @@
 		E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D61BF73BFD00B2E571 /* MainTableViewController.m */; };
 		E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D91BF7433C00B2E571 /* DetailMapViewController.m */; };
 		E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690DD1BF752CC00B2E571 /* APIManager.m */; };
+		E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690E21BF781B400B2E571 /* RideMapLocation.m */; };
 		E0C582681BF7318C0040DBC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C582671BF7318C0040DBC9 /* main.m */; };
 		E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */; };
 		E0C582711BF7318C0040DBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C5826F1BF7318C0040DBC9 /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 		E09690D91BF7433C00B2E571 /* DetailMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapViewController.m; sourceTree = "<group>"; };
 		E09690DC1BF752CC00B2E571 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		E09690DD1BF752CC00B2E571 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		E09690E11BF781B400B2E571 /* RideMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideMapLocation.h; sourceTree = "<group>"; };
+		E09690E21BF781B400B2E571 /* RideMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideMapLocation.m; sourceTree = "<group>"; };
 		E0C582631BF7318C0040DBC9 /* ProjectRoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectRoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582671BF7318C0040DBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C582691BF7318C0040DBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +130,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E09690E01BF7816D00B2E571 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E09690E11BF781B400B2E571 /* RideMapLocation.h */,
+				E09690E21BF781B400B2E571 /* RideMapLocation.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E0C5825A1BF7318C0040DBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				E09690DF1BF752EF00B2E571 /* ViewControllers */,
+				E09690E01BF7816D00B2E571 /* Models */,
 				E09690DB1BF7527700B2E571 /* WebService */,
 				E0C582721BF7318C0040DBC9 /* Assets.xcassets */,
 				E0C582691BF7318C0040DBC9 /* AppDelegate.h */,
@@ -374,6 +387,7 @@
 				E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */,
 				E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */,
 				E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */,
+				E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */,
 				E0C582681BF7318C0040DBC9 /* main.m in Sources */,
 				E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */,
 			);

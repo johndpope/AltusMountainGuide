@@ -31,16 +31,33 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
 
 
 - (void)getRidesForAreaWithPath:(NSString *)path withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock andFailureBlock:(void (^)(NSError *error))failureBlock {
-    
     NSString *testPath = @"user/robm/rides";
     NSString *encodedPath = [testPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     [self GET:encodedPath parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+        NSArray *jsonRides = (NSArray *)responseObject;
+        NSArray *rideIds = [self mapJsonToRideIds:jsonRides];
+        
+        completionBlock(rideIds);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error...");
+        failureBlock(error);
     }];
+}
+
+
+
+
+
+- (NSArray *)mapJsonToRideIds:(NSArray *)jsonRides {
+    NSMutableArray *rideIds = [NSMutableArray array];
+    
+    for (NSDictionary *ride in jsonRides) {
+        NSString *rideId = ride[@"_id"];
+        [rideIds addObject:rideId];
+    }
+    
+    return rideIds.copy;
 }
 
 @end
