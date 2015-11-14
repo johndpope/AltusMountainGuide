@@ -30,52 +30,10 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
 }
 
 
-
-- (void)getRidesForAreaWithPath:(NSString *)path
-            withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
-                andFailureBlock:(void (^)(NSError *error))failureBlock
-{
-    NSString *testPath = @"user/robm/rides";
-    NSString *encodedPath = [testPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    
-    [self GET:encodedPath parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSArray *jsonRides = (NSArray *)responseObject;
-        NSArray *rideIds = [self mapJsonToRideIds:jsonRides];
-        
-        completionBlock(rideIds);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failureBlock(error);
-    }];
-}
-
-
-// post Array of rideIds - get array of RideMapLocation objects ?
-- (void)getRideMapLocationForRideId:(NSString *)rideId
-                withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
-                    andFailureBlock:(void (^)(NSError *error))failureBlock
-{
-    NSString *path = [NSString stringWithFormat:@"/rides/%@/location", rideId];
-    NSString *encodedPath = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    
-    [self GET:encodedPath parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        
-        NSLog(@"Points: %@", responseObject[@"points"]);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failureBlock(error);
-    }];
-}
-
-
-
-
 - (void)getRideMapLocationForAreaPath:(NSString *)areaPath
                   withCompletionBlock:(void (^)(RideMapLocation *rideMapLocation))completionBlock
                       andFailureBlock:(void (^)(NSError *error))failureBlock
 {
-    
     NSString *ridesTestPath = @"user/robm/rides";
     NSString *ridesEncodedPath = [ridesTestPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
@@ -91,22 +49,9 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         
         [self GET:locationsEncodedPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
             // NSLog(@"Points: %@", responseObject[@"points"]);
-            NSArray *locationApiData = responseObject[@"points"];
-        
-            CLLocationCoordinate2D finalCoordinate[locationApiData.count];
+            NSArray *jsonLocations = responseObject[@"points"];
             
-            for (NSInteger i = 0; i < locationApiData.count; i++) {
-                NSDictionary *point = locationApiData[i];
-                NSArray *pointGeoDetail = point[@"geo"];
-                CGFloat longitude = [pointGeoDetail[0] doubleValue];
-                CGFloat latitude = [pointGeoDetail[1] doubleValue];
-                
-                CLLocationCoordinate2D pointCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
-                
-                finalCoordinate[i] = pointCoordinate;
-            }
-            
-            RideMapLocation *finalRideMapLocation = [[RideMapLocation alloc] initWithRideId:testId locationCoordinates:finalCoordinate numberOfLocationPoints:locationApiData.count];
+            RideMapLocation *finalRideMapLocation = [self mapJsonToRideMapLocation:jsonLocations forRideWithId:testId];
             completionBlock(finalRideMapLocation);
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -131,6 +76,23 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
     }
     
     return rideIds.copy;
+}
+
+
+- (RideMapLocation *)mapJsonToRideMapLocation:(NSArray *)jsonLocations forRideWithId:(NSString *)rideId{
+    CLLocationCoordinate2D finalCoordinate[jsonLocations.count];
+    for (NSInteger i = 0; i < jsonLocations.count; i++) {
+        NSDictionary *point = jsonLocations[i];
+        NSArray *pointGeoDetail = point[@"geo"];
+        CGFloat longitude = [pointGeoDetail[0] doubleValue];
+        CGFloat latitude = [pointGeoDetail[1] doubleValue];
+        
+        CLLocationCoordinate2D pointCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+        
+        finalCoordinate[i] = pointCoordinate;
+    }
+    
+    return [[RideMapLocation alloc] initWithRideId:rideId locationCoordinates:finalCoordinate numberOfLocationPoints:jsonLocations.count];
 }
 
 @end
