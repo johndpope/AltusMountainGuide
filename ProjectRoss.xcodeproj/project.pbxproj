@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D61BF73BFD00B2E571 /* MainTableViewController.m */; };
 		E09690DA1BF7433C00B2E571 /* DetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690D91BF7433C00B2E571 /* DetailMapViewController.m */; };
+		E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690DD1BF752CC00B2E571 /* APIManager.m */; };
 		E0C582681BF7318C0040DBC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C582671BF7318C0040DBC9 /* main.m */; };
 		E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */; };
 		E0C582711BF7318C0040DBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C5826F1BF7318C0040DBC9 /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 		E09690D61BF73BFD00B2E571 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		E09690D81BF7433C00B2E571 /* DetailMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapViewController.h; sourceTree = "<group>"; };
 		E09690D91BF7433C00B2E571 /* DetailMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapViewController.m; sourceTree = "<group>"; };
+		E09690DC1BF752CC00B2E571 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		E09690DD1BF752CC00B2E571 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		E0C582631BF7318C0040DBC9 /* ProjectRoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectRoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582671BF7318C0040DBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C582691BF7318C0040DBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E09690DB1BF7527700B2E571 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E09690DC1BF752CC00B2E571 /* APIManager.h */,
+				E09690DD1BF752CC00B2E571 /* APIManager.m */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		E09690DF1BF752EF00B2E571 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E09690D51BF73BFD00B2E571 /* MainTableViewController.h */,
+				E09690D61BF73BFD00B2E571 /* MainTableViewController.m */,
+				E09690D81BF7433C00B2E571 /* DetailMapViewController.h */,
+				E09690D91BF7433C00B2E571 /* DetailMapViewController.m */,
+				E0C5826F1BF7318C0040DBC9 /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E0C5825A1BF7318C0040DBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,14 +152,11 @@
 		E0C582651BF7318C0040DBC9 /* ProjectRoss */ = {
 			isa = PBXGroup;
 			children = (
+				E09690DF1BF752EF00B2E571 /* ViewControllers */,
+				E09690DB1BF7527700B2E571 /* WebService */,
+				E0C582721BF7318C0040DBC9 /* Assets.xcassets */,
 				E0C582691BF7318C0040DBC9 /* AppDelegate.h */,
 				E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */,
-				E09690D51BF73BFD00B2E571 /* MainTableViewController.h */,
-				E09690D61BF73BFD00B2E571 /* MainTableViewController.m */,
-				E09690D81BF7433C00B2E571 /* DetailMapViewController.h */,
-				E09690D91BF7433C00B2E571 /* DetailMapViewController.m */,
-				E0C5826F1BF7318C0040DBC9 /* Main.storyboard */,
-				E0C582721BF7318C0040DBC9 /* Assets.xcassets */,
 				E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */,
 				E0C582771BF7318C0040DBC9 /* Info.plist */,
 				E0C582661BF7318C0040DBC9 /* Supporting Files */,
@@ -354,6 +375,7 @@
 				E09690D71BF73BFD00B2E571 /* MainTableViewController.m in Sources */,
 				E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */,
 				E0C582681BF7318C0040DBC9 /* main.m in Sources */,
+				E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
