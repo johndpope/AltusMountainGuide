@@ -30,7 +30,10 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
 
 
 
-- (void)getRidesForAreaWithPath:(NSString *)path withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock andFailureBlock:(void (^)(NSError *error))failureBlock {
+- (void)getRidesForAreaWithPath:(NSString *)path
+            withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
+                andFailureBlock:(void (^)(NSError *error))failureBlock
+{
     NSString *testPath = @"user/robm/rides";
     NSString *encodedPath = [testPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
@@ -43,6 +46,35 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failureBlock(error);
     }];
+}
+
+
+// post Array of rideIds - get array of RideMapLocation objects ?
+- (void)getRideMapLocationForRideId:(NSString *)rideId
+                withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
+                    andFailureBlock:(void (^)(NSError *error))failureBlock
+{
+    NSString *path = [NSString stringWithFormat:@"/rides/%@/location", rideId];
+    NSString *encodedPath = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    [self GET:encodedPath parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+        NSLog(@"Points: %@", responseObject[@"points"]);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failureBlock(error);
+    }];
+}
+
+
+
+
+- (void)getRideMapLocationForAreaPath:(NSString *)areaPath
+                  withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
+                      andFailureBlock:(void (^)(NSError *error))failureBlock
+{
+    
 }
 
 

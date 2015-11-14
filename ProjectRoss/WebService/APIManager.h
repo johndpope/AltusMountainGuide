@@ -16,4 +16,9 @@
             withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
                 andFailureBlock:(void (^)(NSError *error))failureBlock;
 
+
+- (void)getRideMapLocationForRideId:(NSString *)rideId
+                withCompletionBlock:(void (^)(NSArray *ridesData))completionBlock
+                    andFailureBlock:(void (^)(NSError *error))failureBlock;
+
 @end

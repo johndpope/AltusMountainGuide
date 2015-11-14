@@ -31,6 +31,12 @@
     
     [[APIManager sharedManager] getRidesForAreaWithPath:nil withCompletionBlock:^(NSArray *ridesData) {
         
+        [[APIManager sharedManager] getRideMapLocationForRideId:ridesData[0] withCompletionBlock:^(NSArray *ridesData) {
+            
+        } andFailureBlock:^(NSError *error) {
+            
+        }];
+        
     } andFailureBlock:^(NSError *error) {
         
     }];
