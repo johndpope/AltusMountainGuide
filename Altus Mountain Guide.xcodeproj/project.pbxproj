@@ -64,20 +64,20 @@
 		E09690EA1BF7D8E400B2E571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E09690EC1BF7D8EE00B2E571 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E09690EE1BF7D8FA00B2E571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E0C582631BF7318C0040DBC9 /* ProjectRoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectRoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C582631BF7318C0040DBC9 /* Altus Mountain Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Altus Mountain Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582671BF7318C0040DBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C582691BF7318C0040DBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E0C582701BF7318C0040DBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C582721BF7318C0040DBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C582751BF7318C0040DBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E0C582771BF7318C0040DBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0C5827C1BF7318C0040DBC9 /* ProjectRossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectRossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C582771BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Altus Mountain Guidenfo.plist"; sourceTree = "<group>"; };
+		E0C5827C1BF7318C0040DBC9 /* Altus Mountain Guide.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Altus Mountain Guide.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C582801BF7318C0040DBC9 /* ProjectRossTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectRossTests.m; sourceTree = "<group>"; };
-		E0C582821BF7318C0040DBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0C582871BF7318C0040DBC9 /* ProjectRossUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectRossUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C582821BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Altus Mountain Guidenfo.plist"; sourceTree = "<group>"; };
+		E0C582871BF7318C0040DBC9 /* Altus Mountain Guide.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Altus Mountain Guide.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C5828B1BF7318C0040DBC9 /* ProjectRossUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectRossUITests.m; sourceTree = "<group>"; };
-		E0C5828D1BF7318C0040DBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0C5828D1BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Altus Mountain Guidenfo.plist"; sourceTree = "<group>"; };
 		E0DD63371BF89E69004D8D7D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E0DD63381BF89E6A004D8D7D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E0DD633A1BF8A5BD004D8D7D /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -191,9 +191,9 @@
 		E0C582641BF7318C0040DBC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0C582631BF7318C0040DBC9 /* ProjectRoss.app */,
-				E0C5827C1BF7318C0040DBC9 /* ProjectRossTests.xctest */,
-				E0C582871BF7318C0040DBC9 /* ProjectRossUITests.xctest */,
+				E0C582631BF7318C0040DBC9 /* Altus Mountain Guide.app */,
+				E0C5827C1BF7318C0040DBC9 /* Altus Mountain Guide.xctest */,
+				E0C582871BF7318C0040DBC9 /* Altus Mountain Guide.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				E0C582691BF7318C0040DBC9 /* AppDelegate.h */,
 				E0C5826A1BF7318C0040DBC9 /* AppDelegate.m */,
 				E0C582741BF7318C0040DBC9 /* LaunchScreen.storyboard */,
-				E0C582771BF7318C0040DBC9 /* Info.plist */,
+				E0C582771BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */,
 				E0C582661BF7318C0040DBC9 /* Supporting Files */,
 			);
 			path = ProjectRoss;
@@ -226,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C582801BF7318C0040DBC9 /* ProjectRossTests.m */,
-				E0C582821BF7318C0040DBC9 /* Info.plist */,
+				E0C582821BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */,
 			);
 			path = ProjectRossTests;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C5828B1BF7318C0040DBC9 /* ProjectRossUITests.m */,
-				E0C5828D1BF7318C0040DBC9 /* Info.plist */,
+				E0C5828D1BF7318C0040DBC9 /* Altus Mountain Guidenfo.plist */,
 			);
 			path = ProjectRossUITests;
 			sourceTree = "<group>";
@@ -243,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E0C582621BF7318C0040DBC9 /* ProjectRoss */ = {
+		E0C582621BF7318C0040DBC9 /* Altus Mountain Guide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0C582901BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRoss" */;
+			buildConfigurationList = E0C582901BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain Guide" */;
 			buildPhases = (
 				7D30409DFFB7DE269AF7FD1A /* Check Pods Manifest.lock */,
 				E0C5825F1BF7318C0040DBC9 /* Sources */,
@@ -258,14 +258,14 @@
 			);
 			dependencies = (
 			);
-			name = ProjectRoss;
+			name = "Altus Mountain Guide";
 			productName = ProjectRoss;
-			productReference = E0C582631BF7318C0040DBC9 /* ProjectRoss.app */;
+			productReference = E0C582631BF7318C0040DBC9 /* Altus Mountain Guide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E0C5827B1BF7318C0040DBC9 /* ProjectRossTests */ = {
+		E0C5827B1BF7318C0040DBC9 /* Altus Mountain GuideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0C582931BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossTests" */;
+			buildConfigurationList = E0C582931BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain GuideTests" */;
 			buildPhases = (
 				E0C582781BF7318C0040DBC9 /* Sources */,
 				E0C582791BF7318C0040DBC9 /* Frameworks */,
@@ -276,14 +276,14 @@
 			dependencies = (
 				E0C5827E1BF7318C0040DBC9 /* PBXTargetDependency */,
 			);
-			name = ProjectRossTests;
+			name = "Altus Mountain GuideTests";
 			productName = ProjectRossTests;
-			productReference = E0C5827C1BF7318C0040DBC9 /* ProjectRossTests.xctest */;
+			productReference = E0C5827C1BF7318C0040DBC9 /* Altus Mountain Guide.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E0C582861BF7318C0040DBC9 /* ProjectRossUITests */ = {
+		E0C582861BF7318C0040DBC9 /* Altus Mountain GuideUAltus Mountain GuideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0C582961BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossUITests" */;
+			buildConfigurationList = E0C582961BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain GuideUAltus Mountain GuideTests" */;
 			buildPhases = (
 				E0C582831BF7318C0040DBC9 /* Sources */,
 				E0C582841BF7318C0040DBC9 /* Frameworks */,
@@ -294,9 +294,9 @@
 			dependencies = (
 				E0C582891BF7318C0040DBC9 /* PBXTargetDependency */,
 			);
-			name = ProjectRossUITests;
+			name = "Altus Mountain GuideUAltus Mountain GuideTests";
 			productName = ProjectRossUITests;
-			productReference = E0C582871BF7318C0040DBC9 /* ProjectRossUITests.xctest */;
+			productReference = E0C582871BF7318C0040DBC9 /* Altus Mountain Guide.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -322,7 +322,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E0C5825E1BF7318C0040DBC9 /* Build configuration list for PBXProject "ProjectRoss" */;
+			buildConfigurationList = E0C5825E1BF7318C0040DBC9 /* Build configuration list for PBXProject "Altus Mountain Guide" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -335,9 +335,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E0C582621BF7318C0040DBC9 /* ProjectRoss */,
-				E0C5827B1BF7318C0040DBC9 /* ProjectRossTests */,
-				E0C582861BF7318C0040DBC9 /* ProjectRossUITests */,
+				E0C582621BF7318C0040DBC9 /* Altus Mountain Guide */,
+				E0C5827B1BF7318C0040DBC9 /* Altus Mountain GuideTests */,
+				E0C582861BF7318C0040DBC9 /* Altus Mountain GuideUAltus Mountain GuideTests */,
 			);
 		};
 /* End PBXProject section */
@@ -455,12 +455,12 @@
 /* Begin PBXTargetDependency section */
 		E0C5827E1BF7318C0040DBC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E0C582621BF7318C0040DBC9 /* ProjectRoss */;
+			target = E0C582621BF7318C0040DBC9 /* Altus Mountain Guide */;
 			targetProxy = E0C5827D1BF7318C0040DBC9 /* PBXContainerItemProxy */;
 		};
 		E0C582891BF7318C0040DBC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E0C582621BF7318C0040DBC9 /* ProjectRoss */;
+			target = E0C582621BF7318C0040DBC9 /* Altus Mountain Guide */;
 			targetProxy = E0C582881BF7318C0040DBC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -573,11 +573,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = ProjectRoss/Info.plist;
+				INFOPLIST_FILE = "ProjectRoss/Altus Mountain Guidenfo.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRoss;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Altus Mountain Guide";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -590,11 +590,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = ProjectRoss/Info.plist;
+				INFOPLIST_FILE = "ProjectRoss/Altus Mountain Guidenfo.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRoss;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Altus Mountain Guide";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -604,11 +604,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ProjectRossTests/Info.plist;
+				INFOPLIST_FILE = "ProjectRossTests/Altus Mountain Guidenfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRossTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectRoss.app/ProjectRoss";
+				PRODUCT_NAME = "Altus Mountain Guide";
+				TEST_HOST = "$(BUAltus Mountain GuideLT_PRODUCTS_DAltus Mountain GuideR)/Altus Mountain Guide.app/Altus Mountain Guide";
 			};
 			name = Debug;
 		};
@@ -616,21 +616,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ProjectRossTests/Info.plist;
+				INFOPLIST_FILE = "ProjectRossTests/Altus Mountain Guidenfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRossTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectRoss.app/ProjectRoss";
+				PRODUCT_NAME = "Altus Mountain Guide";
+				TEST_HOST = "$(BUAltus Mountain GuideLT_PRODUCTS_DAltus Mountain GuideR)/Altus Mountain Guide.app/Altus Mountain Guide";
 			};
 			name = Release;
 		};
 		E0C582971BF7318C0040DBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ProjectRossUITests/Info.plist;
+				INFOPLIST_FILE = "ProjectRossUITests/Altus Mountain Guidenfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRossUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Altus Mountain Guide";
 				TEST_TARGET_NAME = ProjectRoss;
 				USES_XCTRUNNER = YES;
 			};
@@ -639,10 +639,10 @@
 		E0C582981BF7318C0040DBC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ProjectRossUITests/Info.plist;
+				INFOPLIST_FILE = "ProjectRossUITests/Altus Mountain Guidenfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gravatron.ProjectRossUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Altus Mountain Guide";
 				TEST_TARGET_NAME = ProjectRoss;
 				USES_XCTRUNNER = YES;
 			};
@@ -651,7 +651,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E0C5825E1BF7318C0040DBC9 /* Build configuration list for PBXProject "ProjectRoss" */ = {
+		E0C5825E1BF7318C0040DBC9 /* Build configuration list for PBXProject "Altus Mountain Guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0C5828E1BF7318C0040DBC9 /* Debug */,
@@ -660,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0C582901BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRoss" */ = {
+		E0C582901BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain Guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0C582911BF7318C0040DBC9 /* Debug */,
@@ -669,7 +669,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0C582931BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossTests" */ = {
+		E0C582931BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain GuideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0C582941BF7318C0040DBC9 /* Debug */,
@@ -678,7 +678,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0C582961BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "ProjectRossUITests" */ = {
+		E0C582961BF7318C0040DBC9 /* Build configuration list for PBXNativeTarget "Altus Mountain GuideUAltus Mountain GuideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0C582971BF7318C0040DBC9 /* Debug */,
