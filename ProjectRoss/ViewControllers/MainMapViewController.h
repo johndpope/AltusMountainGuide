@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import <REFrostedViewController/REFrostedViewController.h>
 
-@interface MainMapViewController : UIViewController
+@interface MainMapViewController : UIViewController <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

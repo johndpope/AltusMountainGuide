@@ -94,13 +94,17 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         double latitude= [pointGeoDetail[0] doubleValue];
         double longitude = [pointGeoDetail[1] doubleValue];
         
+        if (i == 4449) {
+            NSLog(@"4449");
+        }
+        
         CLLocationCoordinate2D pointCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
         
         finalCoordinate[i] = pointCoordinate;
         NSLog(@"Point coordinate number %lu is : lat %f | lon %f", i + 1, latitude, longitude);
     }
     
-    return [[RideMapLocation alloc] initWithRideId:rideId locationCoordinates:finalCoordinate numberOfLocationPoints:jsonLocations.count];
+    return [[RideMapLocation alloc] initWithRideId:rideId locationCoordinates:finalCoordinate numberOfLocationPoints:[NSNumber numberWithInteger:jsonLocations.count]];
 }
 
 @end

@@ -12,9 +12,9 @@
 
 @interface RideMapLocation : NSObject
 @property (nonatomic, strong) NSString *rideId;
-@property (nonatomic, assign) NSUInteger numberOflocationPoints;
+@property (nonatomic, assign) NSNumber *numberOflocationPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D *locationCoordinates;
 
-- (instancetype)initWithRideId:(NSString *)rideId locationCoordinates:(CLLocationCoordinate2D *)locationCoordinates numberOfLocationPoints:(NSUInteger)numberOflocationPoints;
+- (instancetype)initWithRideId:(NSString *)rideId locationCoordinates:(CLLocationCoordinate2D *)locationCoordinates numberOfLocationPoints:(NSNumber *)numberOflocationPoints;
 
 @end

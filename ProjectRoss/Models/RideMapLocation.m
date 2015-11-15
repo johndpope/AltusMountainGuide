@@ -12,7 +12,7 @@
 
 - (instancetype)initWithRideId:(NSString *)rideId
            locationCoordinates:(CLLocationCoordinate2D *)locationCoordinates
-        numberOfLocationPoints:(NSUInteger)numberOflocationPoints
+        numberOfLocationPoints:(NSNumber *)numberOflocationPoints
 {
     self = [super init];
     if (self) {
@@ -22,6 +22,14 @@
     }
     
     return self;
+}
+
+
++ (instancetype)locationWithRideId:(NSString *)rideId
+               locationCoordinates:(CLLocationCoordinate2D *)locationCoordinates
+            numberOfLocationPoints:(NSNumber *)numberOflocationPoints
+{
+    return [[self alloc] initWithRideId:rideId locationCoordinates:locationCoordinates numberOfLocationPoints:numberOflocationPoints];
 }
 
 @end

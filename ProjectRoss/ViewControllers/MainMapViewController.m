@@ -7,6 +7,8 @@
 //
 
 #import "MainMapViewController.h"
+#import "RideMapLocation.h"
+#import "APIManager.h"
 
 @interface MainMapViewController ()
 
@@ -17,7 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.mapView.delegate = self;
  
+    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
+       // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
+        
+        // total number of points we are getting from api is 4562 but don't try to hardcode anything higher than 4460 here, otherwise you will shut down the internet :) idk why :)
+        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:4459];
+        [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(130, 130, 130, 130) animated:YES];
+        [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
+        
+        
+    } andFailureBlock:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +42,19 @@
 
 
 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+    if (![overlay isKindOfClass:[MKPolyline class]]) {
+        return nil;
+    }
+    
+    MKPolyline *polyline = (MKPolyline *) overlay;
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 3;
+    return renderer;
+}
+
+
 - (IBAction)menuButtonTapped:(id)sender {
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
@@ -34,16 +62,5 @@
     [self.frostedViewController presentMenuViewController];
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
