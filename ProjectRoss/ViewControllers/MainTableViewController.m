@@ -34,12 +34,6 @@
     
     
     [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
-//        NSLog(@"%@", rideMapLocation);
-//        
-//        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints];
-//        NSLog(@"%@", polyline);
-//        
-//        
         
         self.testLocation = rideMapLocation;
         

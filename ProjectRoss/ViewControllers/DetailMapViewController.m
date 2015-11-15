@@ -8,6 +8,7 @@
 
 #import "DetailMapViewController.h"
 #import "RideMapLocation.h"
+#import "APIManager.h"
 
 @interface DetailMapViewController ()
 
@@ -34,9 +35,12 @@
     self.navigationItem.title = self.mapDataItem;
     
     self.mapView.delegate = self;
+    
+    
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:self.mapLocationItem.locationCoordinates count:self.mapLocationItem.numberOflocationPoints];
     [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(30, 30, 30, 30) animated:YES];
     [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
+    
 }
 
 

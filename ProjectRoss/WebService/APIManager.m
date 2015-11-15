@@ -46,7 +46,7 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         
         //NSString *testId = @"563f05f5dddf790300000005";
         
-        
+        NSLog(@"Get rides id completion on thread: %@", [NSThread currentThread]);
         
         NSString *locationsPath = [NSString stringWithFormat:@"/rides/%@/location", testId];
         NSString *locationsEncodedPath = [locationsPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -54,6 +54,8 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         [self GET:locationsEncodedPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
             // NSLog(@"Points: %@", responseObject[@"points"]);
             NSArray *jsonLocations = responseObject[@"points"];
+            
+            NSLog(@"Get location points completion on thread: %@", [NSThread currentThread]);
             
             RideMapLocation *finalRideMapLocation = [self mapJsonToRideMapLocation:jsonLocations forRideWithId:testId];
             completionBlock(finalRideMapLocation);
@@ -66,6 +68,8 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         failureBlock(error);
     }];
 }
+
+
 
 
 
@@ -93,7 +97,7 @@ static NSString *const kBaseURL = @"http://staging.gravatron.com/";
         CLLocationCoordinate2D pointCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
         
         finalCoordinate[i] = pointCoordinate;
-        NSLog(@"Point coordinate: lat %f | lon %f", latitude, longitude);
+        NSLog(@"Point coordinate number %lu is : lat %f | lon %f", i + 1, latitude, longitude);
     }
     
     return [[RideMapLocation alloc] initWithRideId:rideId locationCoordinates:finalCoordinate numberOfLocationPoints:jsonLocations.count];
