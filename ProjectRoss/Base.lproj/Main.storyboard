@@ -26,6 +26,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mfG-Jm-81b"/>
                                     <barButtonItem title="Trails around Squamish" width="269" id="grR-Et-hIi">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="Pfb-ea-RIG" kind="presentation" identifier="showTrailsListView" id="Y8u-DC-lq7"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zlR-R6-10W"/>
                                 </items>
@@ -71,11 +74,68 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="yZa-mF-gEb" id="LeZ-OJ-61P"/>
+                        <outlet property="trailsDetailToolbarButton" destination="grR-Et-hIi" id="NZq-7j-6kc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vo-At-47i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848" y="-748"/>
+            <point key="canvasLocation" x="2768" y="-748"/>
+        </scene>
+        <!--Trails List Table View Controller-->
+        <scene sceneID="8Tb-r3-32U">
+            <objects>
+                <tableViewController id="CCI-Vo-vRk" customClass="TrailsListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ctt-98-wNa">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trailDetailCell" textLabel="2JQ-7g-Cnb" detailTextLabel="stE-Q9-vw1" style="IBUITableViewCellStyleSubtitle" id="bdt-Q2-i89">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bdt-Q2-i89" id="sFZ-Uc-TUN">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Trail name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2JQ-7g-Cnb">
+                                            <rect key="frame" x="15" y="5" width="75" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Trail description..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="stE-Q9-vw1">
+                                            <rect key="frame" x="15" y="25" width="95" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CCI-Vo-vRk" id="3O5-kC-btE"/>
+                            <outlet property="delegate" destination="CCI-Vo-vRk" id="YbS-fY-s3x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dmf-Si-pwF">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="2JF-Jy-skd">
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="CCI-Vo-vRk" id="lyG-hm-yMQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ma5-vD-Pgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4289" y="-748"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Ifw-UX-p5K">
@@ -271,6 +331,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtY-V9-pSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2036" y="-748"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i2W-i1-uAd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pfb-ea-RIG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fBU-jd-CiV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="barTintColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CCI-Vo-vRk" kind="relationship" relationship="rootViewController" id="xNB-Rf-IjZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XNs-OB-x4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="-748"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>

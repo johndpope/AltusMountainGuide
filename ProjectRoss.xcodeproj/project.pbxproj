@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E02F64F11BF8B4FA0053EE64 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02F64F01BF8B4FA0053EE64 /* MainMapViewController.m */; };
+		E02F64F41BF9066C0053EE64 /* TrailsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02F64F31BF9066C0053EE64 /* TrailsListTableViewController.m */; };
 		E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690DD1BF752CC00B2E571 /* APIManager.m */; };
 		E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690E21BF781B400B2E571 /* RideMapLocation.m */; };
 		E09690E51BF7D8C600B2E571 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E41BF7D8C600B2E571 /* MapKit.framework */; };
@@ -51,6 +52,8 @@
 		C1E6F1B811864535A17327A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E02F64EF1BF8B4FA0053EE64 /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
 		E02F64F01BF8B4FA0053EE64 /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
+		E02F64F21BF9066C0053EE64 /* TrailsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailsListTableViewController.h; sourceTree = "<group>"; };
+		E02F64F31BF9066C0053EE64 /* TrailsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrailsListTableViewController.m; sourceTree = "<group>"; };
 		E09690DC1BF752CC00B2E571 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		E09690DD1BF752CC00B2E571 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		E09690E11BF781B400B2E571 /* RideMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideMapLocation.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				E0DD633E1BF8B0A5004D8D7D /* MenuTableViewController.m */,
 				E02F64EF1BF8B4FA0053EE64 /* MainMapViewController.h */,
 				E02F64F01BF8B4FA0053EE64 /* MainMapViewController.m */,
+				E02F64F21BF9066C0053EE64 /* TrailsListTableViewController.h */,
+				E02F64F31BF9066C0053EE64 /* TrailsListTableViewController.m */,
 				E0C5826F1BF7318C0040DBC9 /* Main.storyboard */,
 			);
 			path = ViewControllers;
@@ -419,6 +424,7 @@
 			files = (
 				E0DD63391BF89E6A004D8D7D /* RootViewController.m in Sources */,
 				E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */,
+				E02F64F41BF9066C0053EE64 /* TrailsListTableViewController.m in Sources */,
 				E0DD633C1BF8A5BD004D8D7D /* NavigationViewController.m in Sources */,
 				E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */,
 				E02F64F11BF8B4FA0053EE64 /* MainMapViewController.m in Sources */,

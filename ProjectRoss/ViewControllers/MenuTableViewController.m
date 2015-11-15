@@ -56,23 +56,24 @@
     
     MainMapViewController *mainMapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainMapController"];
     navigationVC.viewControllers = @[mainMapVC];
+
     
     switch (indexPath.row) {
         case 0:
-            mainMapVC.navigationItem.title = @"Skyiing...";
+            mainMapVC.navigationItem.title = @"Squamish Skyiing Trails";
             // update map properties
-            NSLog(@"Skyiing...");
+            NSLog(@"Skiing...");
             break;
             
         case 1:
-            mainMapVC.navigationItem.title = @"Climbing...";
+            mainMapVC.navigationItem.title = @"Squamish Climbing Trails";
             // update map properties
             NSLog(@"Climbing...");
             break;
             
         case 2:
             
-            mainMapVC.navigationItem.title = @"Hiking...";
+            mainMapVC.navigationItem.title = @"Squamish Hiking Trails";
             // update map properties
             NSLog(@"Hiking...");
             break;

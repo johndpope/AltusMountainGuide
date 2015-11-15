@@ -9,6 +9,7 @@
 #import "MainMapViewController.h"
 #import "RideMapLocation.h"
 #import "APIManager.h"
+#import "TrailsListTableViewController.h"
 
 @interface MainMapViewController ()
 
@@ -20,6 +21,13 @@
     [super viewDidLoad];
     
     self.mapView.delegate = self;
+    
+    
+    if (!self.navigationItem.title) {
+        self.navigationItem.title = @"Squamish Skyiing Trails";
+    }
+    
+    
  
     [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
        // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
@@ -34,12 +42,6 @@
         NSLog(@"%@", error);
     }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
@@ -62,5 +64,13 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showTrailsListView"]) {
+        UINavigationController *navigationVC = (UINavigationController *)segue.destinationViewController;
+        TrailsListTableViewController *trailsListVC = (TrailsListTableViewController *)navigationVC.topViewController;
+        trailsListVC.navigationBarTitle = self.trailsDetailToolbarButton.title;
+    }
+}
 
 @end
