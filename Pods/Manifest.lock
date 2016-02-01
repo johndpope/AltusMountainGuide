@@ -1,30 +1,46 @@
 PODS:
-  - AFNetworking (3.0.0-beta.2):
-    - AFNetworking/NSURLSession (= 3.0.0-beta.2)
-    - AFNetworking/Reachability (= 3.0.0-beta.2)
-    - AFNetworking/Security (= 3.0.0-beta.2)
-    - AFNetworking/Serialization (= 3.0.0-beta.2)
-    - AFNetworking/UIKit (= 3.0.0-beta.2)
-  - AFNetworking/NSURLSession (3.0.0-beta.2):
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.0-beta.2)
-  - AFNetworking/Security (3.0.0-beta.2)
-  - AFNetworking/Serialization (3.0.0-beta.2)
-  - AFNetworking/UIKit (3.0.0-beta.2):
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - Mapbox-iOS-SDK (3.0.1)
+  - FMDB (2.3):
+    - FMDB/standard (= 2.3)
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
+  - GRMustache (7.3.0):
+    - JRSwizzle (~> 1.0)
+  - JRSwizzle (1.0)
+  - Mapbox-iOS-SDK (1.6.1):
+    - FMDB (= 2.3)
+    - GRMustache (= 7.3.0)
+    - SMCalloutView (= 2.0)
   - REFrostedViewController (2.4.8)
+  - SMCalloutView (2.0)
 
 DEPENDENCIES:
-  - AFNetworking (= 3.0.0-beta.2)
-  - Mapbox-iOS-SDK (~> 3.0)
+  - AFNetworking (~> 3.0)
+  - Mapbox-iOS-SDK (~> 1.6.1)
   - REFrostedViewController (~> 2.4)
 
 SPEC CHECKSUMS:
-  AFNetworking: e3639f8310904c9888ddf03a2fa585633594a6e3
-  Mapbox-iOS-SDK: 61e79f3dd8432617bd1a66b2d7273ab5ce923ca9
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  FMDB: e78c5941bb10563f2b707255119e3655e790c29e
+  GRMustache: 6baee020c5644416c034f5afb1607f6219e7f753
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
+  Mapbox-iOS-SDK: e05afd622a08015736b007f8adb7a1d8dc1a83da
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+  SMCalloutView: f758edd824b18bf4f42de00df1e299861a2d1950
 
 COCOAPODS: 0.39.0
