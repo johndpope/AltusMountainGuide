@@ -18,7 +18,11 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-iX-B1d">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bW-2n-Ulh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <toolbar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-iX-B1d">
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
@@ -33,20 +37,16 @@
                                 </items>
                                 <color key="barTintColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njZ-xX-VQP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1bW-2n-Ulh" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="SOL-Bb-Bm8"/>
                             <constraint firstAttribute="trailing" secondItem="b5c-iX-B1d" secondAttribute="trailing" id="SsI-d6-o8i"/>
                             <constraint firstItem="jdi-6W-MTE" firstAttribute="top" secondItem="b5c-iX-B1d" secondAttribute="bottom" id="fAk-GC-Eyo"/>
-                            <constraint firstItem="njZ-xX-VQP" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="gvf-yV-fPE"/>
-                            <constraint firstItem="b5c-iX-B1d" firstAttribute="top" secondItem="njZ-xX-VQP" secondAttribute="bottom" id="hgt-mR-HbB"/>
-                            <constraint firstAttribute="trailing" secondItem="njZ-xX-VQP" secondAttribute="trailing" id="iNe-Lq-duF"/>
-                            <constraint firstItem="njZ-xX-VQP" firstAttribute="top" secondItem="Fof-Vw-itS" secondAttribute="bottom" id="nQa-Fp-zUX"/>
+                            <constraint firstAttribute="trailing" secondItem="1bW-2n-Ulh" secondAttribute="trailing" id="gxM-yh-XTa"/>
                             <constraint firstItem="b5c-iX-B1d" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="tQI-5T-D9O"/>
+                            <constraint firstItem="b5c-iX-B1d" firstAttribute="top" secondItem="1bW-2n-Ulh" secondAttribute="bottom" id="tpf-CO-msI"/>
+                            <constraint firstItem="1bW-2n-Ulh" firstAttribute="top" secondItem="Fof-Vw-itS" secondAttribute="bottom" id="zty-49-Pkc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oRK-7U-JiD">
@@ -57,7 +57,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapPlaceholderView" destination="njZ-xX-VQP" id="AjB-Cv-Kdb"/>
+                        <outlet property="mapPlaceholderView" destination="1bW-2n-Ulh" id="fxK-Zx-vsC"/>
+                        <outlet property="trailsDetailToolBar" destination="b5c-iX-B1d" id="8Ur-65-C2g"/>
                         <outlet property="trailsDetailToolbarButton" destination="grR-Et-hIi" id="NZq-7j-6kc"/>
                     </connections>
                 </viewController>
@@ -274,7 +275,6 @@
         <scene sceneID="oxo-j5-gLt">
             <objects>
                 <navigationController storyboardIdentifier="contentController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Iy-Xs-IzJ" customClass="NavigationViewController" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BiP-9A-iDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

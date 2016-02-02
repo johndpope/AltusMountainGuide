@@ -25,7 +25,6 @@
         self.navigationItem.title = @"Squamish Skyiing Trails";
     }
     
-    
  
 //    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
 //       // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
@@ -40,25 +39,48 @@
 //        NSLog(@"%@", error);
 //    }];
     
+
+    // TODO:  figure out how to set map view as subview of self.mapPlaceholderView when it's frame is set to final size
+//    [mapPlaceholderView layoutIfNeeded];
+//    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.mapPlaceholderView.bounds];
+//    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    [self.mapPlaceholderView addSubview:mapView];
     
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.mapPlaceholderView.frame];
-    [self.mapPlaceholderView addSubview:mapView];
     
+    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds];
+    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [self.view addSubview:mapView];
+}
+
+
+
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
 }
 
 
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
-    if (![overlay isKindOfClass:[MKPolyline class]]) {
-        return nil;
-    }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    MKPolyline *polyline = (MKPolyline *) overlay;
-    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline];
-    renderer.strokeColor = [UIColor blueColor];
-    renderer.lineWidth = 3;
-    return renderer;
 }
+
+
+
+
+//- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+//    if (![overlay isKindOfClass:[MKPolyline class]]) {
+//        return nil;
+//    }
+//    
+//    MKPolyline *polyline = (MKPolyline *) overlay;
+//    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline];
+//    renderer.strokeColor = [UIColor blueColor];
+//    renderer.lineWidth = 3;
+//    return renderer;
+//}
 
 
 - (IBAction)menuButtonTapped:(id)sender {
