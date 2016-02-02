@@ -10,7 +10,7 @@
 #import "RideMapLocation.h"
 #import "APIManager.h"
 #import "TrailsListTableViewController.h"
-#import <Mapbox-iOS-SDK/RMMapView.h>
+#import "Mapbox.h"
 
 @interface MainMapViewController ()
 

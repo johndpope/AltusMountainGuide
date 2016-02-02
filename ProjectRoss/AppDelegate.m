@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Mapbox.h"
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
-#import <Mapbox-iOS-SDK/Mapbox.h>
+
 
 @interface AppDelegate ()
 
