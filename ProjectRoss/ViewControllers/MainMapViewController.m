@@ -59,21 +59,35 @@
     [mapView setCenterCoordinate:centerCoordinate animated:YES];
     
     [self.view addSubview:mapView];
+    
+    
+    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:mapView coordinate:rideMapLocation.locationCoordinates[0] andTitle:nil];
+        annotation.userInfo = rideMapLocation;
+        
+//        [annotation setBoundingBoxFromLocations:rideMapLocation];
+        [mapView addAnnotation:annotation];
+
+    } andFailureBlock:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+
 }
 
 
 
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation {
+    if (annotation.isUserLocationAnnotation) {
+        return nil;
+    }
     
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    RMShape *ridePolyline = [[RMShape alloc] initWithView:mapView];
+    ridePolyline.lineColor = [UIColor redColor];
+    ridePolyline.lineWidth = 3.0;
     
+    for (CLLocation *location in ) {
+        <#statements#>
+    }
 }
 
 
