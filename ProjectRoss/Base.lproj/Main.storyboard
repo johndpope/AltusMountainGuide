@@ -33,34 +33,21 @@
                                 </items>
                                 <color key="barTintColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yZa-mF-gEb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njZ-xX-VQP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
-                            </mapView>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yZa-mF-gEb" secondAttribute="trailing" id="CMr-Lg-eff"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="centerX" secondItem="3WB-9a-6Oj" secondAttribute="centerX" id="FMd-F8-pLt"/>
-                            <constraint firstAttribute="trailing" secondItem="yZa-mF-gEb" secondAttribute="trailing" id="IBu-dq-F4k"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="PB7-JT-S0k"/>
                             <constraint firstAttribute="trailing" secondItem="b5c-iX-B1d" secondAttribute="trailing" id="SsI-d6-o8i"/>
                             <constraint firstItem="jdi-6W-MTE" firstAttribute="top" secondItem="b5c-iX-B1d" secondAttribute="bottom" id="fAk-GC-Eyo"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="top" secondItem="Fof-Vw-itS" secondAttribute="bottom" id="imt-jQ-MZV"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="centerY" secondItem="3WB-9a-6Oj" secondAttribute="centerY" constant="10" id="oAU-co-HBd"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="rvQ-JY-DLT"/>
-                            <constraint firstItem="b5c-iX-B1d" firstAttribute="top" secondItem="yZa-mF-gEb" secondAttribute="bottom" id="sgr-dK-XNx"/>
+                            <constraint firstItem="njZ-xX-VQP" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="gvf-yV-fPE"/>
+                            <constraint firstItem="b5c-iX-B1d" firstAttribute="top" secondItem="njZ-xX-VQP" secondAttribute="bottom" id="hgt-mR-HbB"/>
+                            <constraint firstAttribute="trailing" secondItem="njZ-xX-VQP" secondAttribute="trailing" id="iNe-Lq-duF"/>
+                            <constraint firstItem="njZ-xX-VQP" firstAttribute="top" secondItem="Fof-Vw-itS" secondAttribute="bottom" id="nQa-Fp-zUX"/>
                             <constraint firstItem="b5c-iX-B1d" firstAttribute="leading" secondItem="3WB-9a-6Oj" secondAttribute="leading" id="tQI-5T-D9O"/>
-                            <constraint firstItem="yZa-mF-gEb" firstAttribute="top" secondItem="Fof-Vw-itS" secondAttribute="bottom" id="zwy-bL-vyl"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="CMr-Lg-eff"/>
-                                <exclude reference="FMd-F8-pLt"/>
-                                <exclude reference="imt-jQ-MZV"/>
-                                <exclude reference="oAU-co-HBd"/>
-                                <exclude reference="rvQ-JY-DLT"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oRK-7U-JiD">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="bgf-c1-9Wt">
@@ -70,7 +57,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="yZa-mF-gEb" id="LeZ-OJ-61P"/>
+                        <outlet property="mapPlaceholderView" destination="njZ-xX-VQP" id="AjB-Cv-Kdb"/>
                         <outlet property="trailsDetailToolbarButton" destination="grR-Et-hIi" id="NZq-7j-6kc"/>
                     </connections>
                 </viewController>
@@ -287,6 +274,7 @@
         <scene sceneID="oxo-j5-gLt">
             <objects>
                 <navigationController storyboardIdentifier="contentController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Iy-Xs-IzJ" customClass="NavigationViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BiP-9A-iDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

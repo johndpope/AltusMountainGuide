@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <Mapbox-iOS-SDK/Mapbox.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,8 @@
     // Override point for customization after application launch.
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1Ijoiam9saTg1IiwiYSI6ImNpaDEyMGdocjAwa3FuZG03bjN6NXMzeXYifQ.p0fGvY3NCnjwVDvPXdXS4A"];
     
     return YES;
 }

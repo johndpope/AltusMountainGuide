@@ -43,5 +43,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>New item</key>
+	<string></string>
 </dict>
 </plist>

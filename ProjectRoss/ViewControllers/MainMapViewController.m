@@ -10,6 +10,7 @@
 #import "RideMapLocation.h"
 #import "APIManager.h"
 #import "TrailsListTableViewController.h"
+#import <Mapbox-iOS-SDK/RMMapView.h>
 
 @interface MainMapViewController ()
 
@@ -20,27 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mapView.delegate = self;
-    
-    
     if (!self.navigationItem.title) {
         self.navigationItem.title = @"Squamish Skyiing Trails";
     }
     
     
  
-    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
-       // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
-        
-        // total number of points we are getting from api is 4562 but don't try to hardcode anything higher than 4460 here, otherwise you will shut down the internet :) idk why :)
-        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:4459];
-        [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(130, 130, 130, 130) animated:YES];
-        [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
-        
-        
-    } andFailureBlock:^(NSError *error) {
-        NSLog(@"%@", error);
-    }];
+//    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
+//       // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
+//        
+//        // total number of points we are getting from api is 4562 but don't try to hardcode anything higher than 4460 here, otherwise you will shut down the internet :) idk why :)
+//        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:4459];
+//        [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(130, 130, 130, 130) animated:YES];
+//        [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
+//        
+//        
+//    } andFailureBlock:^(NSError *error) {
+//        NSLog(@"%@", error);
+//    }];
+    
+    
+    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.mapPlaceholderView.frame];
+    [self.mapPlaceholderView addSubview:mapView];
+    
+    
 }
 
 

@@ -10,8 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <REFrostedViewController/REFrostedViewController.h>
 
-@interface MainMapViewController : UIViewController <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@interface MainMapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trailsDetailToolbarButton;
+@property (weak, nonatomic) IBOutlet UIView *mapPlaceholderView;
 
 @end
