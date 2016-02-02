@@ -43,7 +43,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>New item</key>
-	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Enable location services....</string>
 </dict>
 </plist>

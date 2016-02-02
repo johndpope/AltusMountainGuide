@@ -12,7 +12,8 @@
 #import "TrailsListTableViewController.h"
 #import "Mapbox.h"
 
-@interface MainMapViewController ()
+
+@interface MainMapViewController () <RMMapViewDelegate>
 
 @end
 
@@ -42,13 +43,21 @@
 
     // TODO:  figure out how to set map view as subview of self.mapPlaceholderView when it's frame is set to final size
 //    [mapPlaceholderView layoutIfNeeded];
+//    self.mapPlaceholderView .autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 //    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.mapPlaceholderView.bounds];
 //    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 //    [self.mapPlaceholderView addSubview:mapView];
     
     
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds];
+    RMMapboxSource *onlineMapSource = [[RMMapboxSource alloc] initWithMapID:@"joli85.p25aidmn"];
+    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineMapSource];
+    mapView.delegate = self;
     mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    mapView.zoom = 10;
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(50.116322,-122.957359);
+    [mapView setCenterCoordinate:centerCoordinate animated:YES];
+    
     [self.view addSubview:mapView];
 }
 
