@@ -14,6 +14,8 @@
 
 
 @interface MainMapViewController () <RMMapViewDelegate>
+@property (nonatomic, strong) RMMapView *mapView;
+@property (nonatomic, assign) NSUInteger maxDownloadZoom;
 
 @end
 
@@ -34,25 +36,68 @@
 //    [self.mapPlaceholderView addSubview:mapView];
     
     
-    RMMapboxSource *onlineMapSource = [[RMMapboxSource alloc] initWithMapID:@"joli85.p25aidmn"];
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineMapSource];
-    mapView.delegate = self;
-    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
-    mapView.zoom = 10;
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(50.116322,-122.957359);
-    [mapView setCenterCoordinate:centerCoordinate animated:YES];
-    
-    [self.view addSubview:mapView];
     
     
-    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapData *rideMapData) {        
+//    RMMapboxSource *onlineMapSource = [[RMMapboxSource alloc] initWithMapID:@"joli85.p25aidmn"];
+//    self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineMapSource];
+//    self.mapView.delegate = self;
+//    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    
+//    self.mapView.zoom = 10;
+//    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(50.116322,-122.957359);
+//    [self.mapView setCenterCoordinate:centerCoordinate animated:YES];
+//    
+//    [self.view addSubview:self.mapView];
+
+    
+    self.maxDownloadZoom = 22;
+    
+    RMMapboxSource *mapTileSource;
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"tileJSON"]) {
+        // map not cached yet, load map  from online source
+//        mapTileSource = [[RMMapboxSource alloc] initWithMapID:@"joli85.p25aidmn"];
+        mapTileSource = [[RMMapboxSource alloc] initWithMapID:@"mapbox.run-bike-hike"];
+        
+    } else {
+        // load cached data
+        mapTileSource = [[RMMapboxSource alloc] initWithTileJSON:[[NSUserDefaults standardUserDefaults] objectForKey:@"tileJSON"]];
+    }
+    
+    
+    
+
+    
+    
+    if (!mapTileSource) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+                                                        message:@"App need to be online for the first time to be able cache map data."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+        
+        [alert show];
+    }
+    
+    
+    self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:mapTileSource];
+    self.mapView.delegate = self;
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [self.mapView setZoom:10 atCoordinate:CLLocationCoordinate2DMake(50.116322, -122.957359) animated:NO];
+    self.mapView.maxZoom = self.maxDownloadZoom;
+    self.mapView.tileCache = [[RMTileCache alloc] initWithExpiryPeriod:0];
+    
+    [self.view addSubview:self.mapView];
+    
+    
+    
+    
+    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapData *rideMapData) {
         CLLocationCoordinate2D initialCoordinate = ((CLLocation *)rideMapData.locationCoordinates[0]).coordinate;
-        RMAnnotation *rideAnnotation = [[RMAnnotation alloc] initWithMapView:mapView coordinate:initialCoordinate andTitle:nil];
+        RMAnnotation *rideAnnotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:initialCoordinate andTitle:nil];
         rideAnnotation.userInfo = rideMapData.locationCoordinates;
         [rideAnnotation setBoundingBoxFromLocations:rideMapData.locationCoordinates];
         
-        [mapView addAnnotation:rideAnnotation];
+        [self.mapView addAnnotation:rideAnnotation];
         
     } andFailureBlock:^(NSError *error) {
         NSLog(@"%@", error);
@@ -80,20 +125,6 @@
 
 
 
-
-//- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
-//    if (![overlay isKindOfClass:[MKPolyline class]]) {
-//        return nil;
-//    }
-//    
-//    MKPolyline *polyline = (MKPolyline *) overlay;
-//    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline];
-//    renderer.strokeColor = [UIColor blueColor];
-//    renderer.lineWidth = 3;
-//    return renderer;
-//}
-
-
 - (IBAction)menuButtonTapped:(id)sender {
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
@@ -101,6 +132,15 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+
+- (IBAction)deleteMapButtonPressed:(id)sender {
+    
+}
+
+
+- (IBAction)saveMapButtonPressed:(id)sender {
+    
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTrailsListView"]) {

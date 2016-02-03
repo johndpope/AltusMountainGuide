@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Main Map View Controller-->
@@ -20,7 +21,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bW-2n-Ulh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <toolbar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-iX-B1d">
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
@@ -58,9 +59,23 @@
                                 <action selector="menuButtonTapped:" destination="2Qr-Ub-CXq" id="Yh7-Vc-waL"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="organize" id="anj-rk-UKx">
+                                <connections>
+                                    <action selector="saveMapButtonPressed:" destination="2Qr-Ub-CXq" id="guI-ZX-Vci"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="S0h-TA-SAN">
+                                <connections>
+                                    <action selector="deleteMapButtonPressed:" destination="2Qr-Ub-CXq" id="Lvc-Th-ko7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteMapButton" destination="S0h-TA-SAN" id="Rod-z6-zg0"/>
                         <outlet property="mapPlaceholderView" destination="1bW-2n-Ulh" id="fxK-Zx-vsC"/>
+                        <outlet property="saveMapButton" destination="anj-rk-UKx" id="4Wz-i6-2hp"/>
                         <outlet property="trailsDetailToolBar" destination="b5c-iX-B1d" id="8Ur-65-C2g"/>
                         <outlet property="trailsDetailToolbarButton" destination="grR-Et-hIi" id="NZq-7j-6kc"/>
                     </connections>
@@ -320,5 +335,5 @@
             <point key="canvasLocation" x="3477" y="-748"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>

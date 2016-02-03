@@ -10,10 +10,12 @@
 #import <REFrostedViewController/REFrostedViewController.h>
 
 
-@interface MainMapViewController : UIViewController 
+@interface MainMapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trailsDetailToolbarButton;
 @property (weak, nonatomic) IBOutlet UIView *mapPlaceholderView;
 @property (weak, nonatomic) IBOutlet UIToolbar *trailsDetailToolBar;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteMapButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveMapButton;
 
 @end
