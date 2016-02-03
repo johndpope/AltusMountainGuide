@@ -8,13 +8,13 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-@class RideMapLocation;
+@class RideMapData;
 
 @interface APIManager : AFHTTPSessionManager
 
 + (instancetype)sharedManager;
 - (void)getRideMapLocationForAreaPath:(NSString *)areaPath
-                  withCompletionBlock:(void (^)(RideMapLocation *rideMapLocation))completionBlock
+                  withCompletionBlock:(void (^)(RideMapData *rideMapLocation))completionBlock
                       andFailureBlock:(void (^)(NSError *error))failureBlock;
 
 @end

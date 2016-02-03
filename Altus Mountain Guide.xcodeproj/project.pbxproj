@@ -10,7 +10,7 @@
 		E02F64F11BF8B4FA0053EE64 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02F64F01BF8B4FA0053EE64 /* MainMapViewController.m */; };
 		E02F64F41BF9066C0053EE64 /* TrailsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02F64F31BF9066C0053EE64 /* TrailsListTableViewController.m */; };
 		E09690DE1BF752CC00B2E571 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690DD1BF752CC00B2E571 /* APIManager.m */; };
-		E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690E21BF781B400B2E571 /* RideMapLocation.m */; };
+		E09690E31BF781B400B2E571 /* RideMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = E09690E21BF781B400B2E571 /* RideMapData.m */; };
 		E09690E51BF7D8C600B2E571 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E41BF7D8C600B2E571 /* MapKit.framework */; };
 		E09690E71BF7D8D300B2E571 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E61BF7D8D300B2E571 /* CoreMotion.framework */; };
 		E09690E91BF7D8DD00B2E571 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09690E81BF7D8DD00B2E571 /* CoreLocation.framework */; };
@@ -61,8 +61,8 @@
 		E02F64F31BF9066C0053EE64 /* TrailsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrailsListTableViewController.m; sourceTree = "<group>"; };
 		E09690DC1BF752CC00B2E571 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		E09690DD1BF752CC00B2E571 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
-		E09690E11BF781B400B2E571 /* RideMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideMapLocation.h; sourceTree = "<group>"; };
-		E09690E21BF781B400B2E571 /* RideMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideMapLocation.m; sourceTree = "<group>"; };
+		E09690E11BF781B400B2E571 /* RideMapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideMapData.h; sourceTree = "<group>"; };
+		E09690E21BF781B400B2E571 /* RideMapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideMapData.m; sourceTree = "<group>"; };
 		E09690E41BF7D8C600B2E571 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E09690E61BF7D8D300B2E571 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E09690E81BF7D8DD00B2E571 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -247,8 +247,8 @@
 		E09690E01BF7816D00B2E571 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E09690E11BF781B400B2E571 /* RideMapLocation.h */,
-				E09690E21BF781B400B2E571 /* RideMapLocation.m */,
+				E09690E11BF781B400B2E571 /* RideMapData.h */,
+				E09690E21BF781B400B2E571 /* RideMapData.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 				E0C5826B1BF7318C0040DBC9 /* AppDelegate.m in Sources */,
 				E02F64F41BF9066C0053EE64 /* TrailsListTableViewController.m in Sources */,
 				E0DD633C1BF8A5BD004D8D7D /* NavigationViewController.m in Sources */,
-				E09690E31BF781B400B2E571 /* RideMapLocation.m in Sources */,
+				E09690E31BF781B400B2E571 /* RideMapData.m in Sources */,
 				E02F64F11BF8B4FA0053EE64 /* MainMapViewController.m in Sources */,
 				E0C582681BF7318C0040DBC9 /* main.m in Sources */,
 				E0DD633F1BF8B0A5004D8D7D /* MenuTableViewController.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "MainMapViewController.h"
-#import "RideMapLocation.h"
+#import "RideMapData.h"
 #import "APIManager.h"
 #import "TrailsListTableViewController.h"
 #import "Mapbox.h"
@@ -26,21 +26,6 @@
         self.navigationItem.title = @"Squamish Skyiing Trails";
     }
     
- 
-//    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
-//       // MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:rideMapLocation.numberOflocationPoints.integerValue];
-//        
-//        // total number of points we are getting from api is 4562 but don't try to hardcode anything higher than 4460 here, otherwise you will shut down the internet :) idk why :)
-//        MKPolyline *polyline = [MKPolyline polylineWithCoordinates:rideMapLocation.locationCoordinates count:4459];
-//        [self.mapView setVisibleMapRect:[polyline boundingMapRect] edgePadding:UIEdgeInsetsMake(130, 130, 130, 130) animated:YES];
-//        [self.mapView addOverlay:polyline level:MKOverlayLevelAboveLabels];
-//        
-//        
-//    } andFailureBlock:^(NSError *error) {
-//        NSLog(@"%@", error);
-//    }];
-    
-
     // TODO:  figure out how to set map view as subview of self.mapPlaceholderView when it's frame is set to final size
 //    [mapPlaceholderView layoutIfNeeded];
 //    self.mapPlaceholderView .autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -61,13 +46,14 @@
     [self.view addSubview:mapView];
     
     
-    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapLocation *rideMapLocation) {
-        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:mapView coordinate:rideMapLocation.locationCoordinates[0] andTitle:nil];
-        annotation.userInfo = rideMapLocation;
+    [[APIManager sharedManager] getRideMapLocationForAreaPath:nil withCompletionBlock:^(RideMapData *rideMapData) {        
+        CLLocationCoordinate2D initialCoordinate = ((CLLocation *)rideMapData.locationCoordinates[0]).coordinate;
+        RMAnnotation *rideAnnotation = [[RMAnnotation alloc] initWithMapView:mapView coordinate:initialCoordinate andTitle:nil];
+        rideAnnotation.userInfo = rideMapData.locationCoordinates;
+        [rideAnnotation setBoundingBoxFromLocations:rideMapData.locationCoordinates];
         
-//        [annotation setBoundingBoxFromLocations:rideMapLocation];
-        [mapView addAnnotation:annotation];
-
+        [mapView addAnnotation:rideAnnotation];
+        
     } andFailureBlock:^(NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -85,9 +71,11 @@
     ridePolyline.lineColor = [UIColor redColor];
     ridePolyline.lineWidth = 3.0;
     
-    for (CLLocation *location in ) {
-        <#statements#>
+    for (CLLocation *location in (NSArray *)annotation.userInfo) {
+        [ridePolyline addLineToCoordinate:location.coordinate];
     }
+    
+    return ridePolyline;
 }
 
 
