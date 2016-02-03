@@ -12,6 +12,9 @@
 #import "TrailsListTableViewController.h"
 #import "Mapbox.h"
 
+#import <malloc/malloc.h>
+#import <objc/objc-api.h>
+
 
 @interface MainMapViewController () <RMMapViewDelegate, UIAlertViewDelegate, RMTileCacheBackgroundDelegate>
 @property (nonatomic, strong) RMMapView *mapView;
@@ -120,9 +123,11 @@
 
 
 - (IBAction)deleteMapButtonPressed:(id)sender {
+    if (!self.mapView) {
+        return;
+    }
     
-    
-    
+    [self deleteDownloadedMapTiles];
 }
 
 
@@ -155,8 +160,10 @@
 - (void)logCacheSize {
     for (RMTileCache *cache in self.mapView.tileCache.tileCaches) {
         if ([cache isMemberOfClass:[RMDatabaseCache class]]) {
-            double cacheSize = sizeof(cache) / 1024 / 1024;
-            NSLog(@"Current cache size in MB: %f", cacheSize);
+//            double cacheSize = malloc_size((__bridge const void *)(cache));
+            
+          
+            NSLog(@"Current cache size in MB: %zd", malloc_size((__bridge const void *) cache));
         }
     }
 }
@@ -175,6 +182,16 @@
                                                     northEast:[self.mapView latitudeLongitudeBoundingBox].northEast
                                                       minZoom:self.mapView.zoom
                                                       maxZoom:self.maxDownloadZoom];
+}
+
+
+- (void)deleteDownloadedMapTiles {
+    [self.mapView removeAllCachedImages];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"tileJSON"];
+    NSLog(@"Cache cleared");
+    
+    [self.mapView reloadTileSource:self.mapView.tileSource];
+    [self logCacheSize];
 }
 
 
